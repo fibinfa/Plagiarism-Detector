@@ -1,0 +1,61 @@
+<div class="top-content">
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text">
+                    <h1>
+                        <strong>CodeSniffer</strong> Register
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 book">
+                    <img src="assets/img/deepsearch-feature.png" alt="">
+                </div>
+
+                <div class="col-sm-5 form-box">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h2>Register</h2>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-bottom">
+                        <label for="username">Username</label>
+                        <input ng-model="model.user.username" id="username" type="text" class="form-control" placeholder="username"/>
+
+                        <label for="passwd">Password</label>
+                        <input ng-model="model.user.password" id="passwd" type="password" class="form-control" placeholder="password"/>
+
+                        <label for="reg-v-passwd">Validate Password</label>
+                        <input ng-model="model.vpassword" id="reg-v-passwd" type="password" class="form-control" placeholder="verify password"/>
+
+                        <label for="fName">First Name</label>
+                        <input ng-model="model.user.fName" id="fName" type="text" class="form-control" placeholder="John"/>
+
+                        <label for="lName">Last Name</label>
+                        <input ng-model="model.user.lName" id="lName" type="text" class="form-control" placeholder="Doe"/>
+
+                        <label for="email">E-Mail</label>
+                        <input ng-model="model.user.email" id="email" type="email" class="form-control" placeholder="your.email@email.com"/>
+
+                        <form>
+                            <label>User Type:</label>
+                            <input type="radio" ng-model="model.user.userType" value="PROFESSOR">Professor
+                            <input type="radio" ng-model="model.user.userType" value="STUDENT"/>Student
+                        </form>
+
+                        <a class="btn btn-primary btn-block" ng-click="model.register(model.user)">Register</a>
+                        <a class="btn btn-danger  btn-block" href="#/login">Cancel</a>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="model.error" class="alert alert-danger" role="alert">
+                {{model.error}}
+            </div>
+        </div>
+    </div>
+</div>

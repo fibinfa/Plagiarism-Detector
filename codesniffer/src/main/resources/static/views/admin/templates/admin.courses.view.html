@@ -1,0 +1,61 @@
+<div class="top-content">
+
+    <div class="inner-bg">
+        <div class="navigation">
+			<div class="row">
+				<div class="col-sm-10 text">
+					<h1 class="nav-title">
+						<strong>Code Sniffer</strong>
+					</h1>
+				</div>
+				<div class="col-sm-2  text nav-div">
+					<a class="btn btn-block" ng-click="model.logout()">Logout</a>
+				</div>
+			</div>
+		</div>
+        <div class="container">
+            <h1 style="color: darkslateblue;">
+                <strong>Manage Courses</strong>
+            </h1>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Course Name</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="course in model.courses">
+                    <td style="text-align: left;"><span class="admin-tbody">{{course.id}}</span></td>
+                    <td style="text-align: left;"><input class="admin-tbody" ng-model="course.name"/></td>
+
+                    <td>
+                        <!--<a ng-click="model.deletecourse(course)"-->
+                        <!--class="glyphicon glyphicon-remove pull-right"> </a>-->
+                        <a ng-click="model.updateCourse(course)"
+                           class="glyphicon glyphicon-ok pull-right"> </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <!--<td class="admin-tbody"><input ng-model="model.newSem.id"/></td>-->
+                    <td></td>
+                    <td style="text-align: left;"><input class="admin-tbody" ng-model="model.newSem.name"/></td>
+                    <td>
+                        <a ng-click="model.createCourse(model.newSem)"
+                           class="glyphicon glyphicon-plus pull-right"> </a>
+                    </td>
+                </tbody>
+
+            </table>
+
+        </div>
+        <div ng-show="model.error" class="alert alert-danger" role="alert">
+            {{model.error}}
+        </div>
+        <div ng-show="model.info" class="alert alert-info" role="alert">
+            {{model.info}}
+        </div>
+    </div>
+</div>

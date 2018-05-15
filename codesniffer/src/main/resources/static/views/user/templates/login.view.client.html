@@ -1,0 +1,55 @@
+<div class="top-content">
+	<div class="inner-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 text">
+					<h1>
+						<strong>CodeSniffer</strong> Login
+					</h1>
+					<div class="description">
+						<p>
+							Welcome to <strong>CodeSniffer</strong>! Just a simple login and
+							it will sniff if someone has copied the thoughts!
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 book">
+					<img src="assets/img/deepsearch-feature.png" alt="">
+				</div>
+				<div class="col-sm-5 form-box">
+					<div class="form-top">
+						<div class="form-top-left">
+							<h2>Login</h2>
+						</div>
+						<div class="form-top-right">
+							<i class="fa fa-pencil"></i>
+						</div>
+					</div>
+					<div class="form-bottom">
+						<form role="form" class="registration-form">
+							<div class="form-group">
+								<!--<label class="sr-only" for="form-first-name">First name</label>-->
+								<input ng-model="model.user.username" type="text"
+									name="form-user-name" placeholder="username"
+									class="form-control" id="form-user-name">
+							</div>
+							<div class="form-group">
+								<input type="password" ng-model="model.user.password"
+									name="form-password" placeholder="Password"
+									class="form-control" id="form-password">
+							</div>
+							<a class="btn btn-primary login-btn" ng-click="model.login(model.user)">Login</a>
+							<a class="btn btn-primary login-btn" href="#/register">Register</a>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div ng-show="model.error" class="alert alert-danger" role="alert">
+				{{model.error}}
+			</div>
+		</div>
+	</div>
+
+</div>

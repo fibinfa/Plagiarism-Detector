@@ -1,0 +1,136 @@
+<div class="top-content">
+
+	<div class="inner-bg">
+
+		<div class="navigation">
+			<div class="row">
+				<div class="col-sm-10 text">
+					<h1 class="nav-title">
+						<strong>Code Sniffer</strong>
+					</h1>
+				</div>
+				<div class="col-sm-2  text nav-div">
+					<a class="btn btn-block" ng-click="model.logout()">Logout</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-sm-12 text">
+					<h1>
+						<strong>Hi {{userName}}! Here are your courses for this
+							semester</strong>
+					</h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6">
+					<!-- accordian starts -->
+					<div id="accordion">
+						<div class="card" ng-repeat="clist in courseList">
+							<div class="card-header" id="headingOne-{{clist.id}}">
+								<h5 class="mb-0">
+									<button class="btn btn-link collapsed acc-btn"
+										data-toggle="collapse" data-target="#collapseOne-{{clist.id}}"
+										aria-expanded="false" aria-controls="collapseOne-{{clist.id}}"
+										id="{{clist.id}}-{{clist.name}}"
+										ng-click="model.showAssignments($event)">{{clist.name}}</button>
+								</h5>
+							</div>
+
+							<div id="collapseOne-{{clist.id}}" class="collapse"
+								aria-labelledby="headingOne-{{clist.id}}"
+								data-parent="#accordion">
+								<div class="card-body">
+									<ul>
+										<li ng-repeat="c in courseAssignments[clist.name]">{{c.name}}
+											<a id="{{c.id}}-{{clist.id}}_{{c.name}}"
+											ng-click="model.submitAssignment($event)"
+											style="float: right">Submit</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- accordian ends -->
+				</div>
+
+				<div class="col-sm-6">
+					<div class="row">
+						<div id="add-course-accordion">
+							<div class="card">
+								<div class="card-header" id="add-course-headingOne">
+									<h5 class="mb-0">
+										<button class="btn btn-link collapsed acc-btn"
+											data-toggle="collapse" data-target="#add-course-collapseOne"
+											aria-expanded="false" aria-controls="add-course-collapseOne"
+											ng-click="model.getAllCourses()">Add Course</button>
+									</h5>
+								</div>
+
+								<div id="add-course-collapseOne" class="collapse"
+									aria-labelledby="add-course-headingOne"
+									data-parent="#add-course-accordion">
+									<div class="card-body">
+										<table class="add-assgn-table">
+											<tr>
+												<td class="add-assgn-td">Course Name</td>
+												<td class="add-assgn-td"><select
+													class="form-control add-course-select"
+													ng-model="selectedCourse">
+														<option ng-repeat="c in courses">{{c.id}}
+															{{c.name}}</option>
+												</select></td>
+											</tr>
+
+										</table>
+										<button class="btn add-course-btn"
+											ng-click="model.addCourse()">Add</button>
+										<p ng-bind="model.response"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" ng-show="model.submitAssgn">
+						<form>
+							<h3 style="font-size: 25px; color: steelblue;">Choose upload
+								method for {{courseName}}:</h3>
+							<input type="radio" ng-model="model.uploadMethod"
+								ng-change="model.checkUploadMethod()" value="ZIP">Zip
+							File <input type="radio" ng-change="model.checkUploadMethod()"
+								ng-model="model.uploadMethod" value="GITHUB" />GitHub Link
+						</form>
+					</div>
+
+					<div class="row" ng-show="model.filesubmitAssgn">
+						<h2>Choose file</h2>
+						<input type="file" file-model="uploadedFile"
+							placeholder="Upload File" class="form-control choose-file">
+					</div>
+
+					<div class="row" ng-show="model.gitsubmitAssgn">
+						<h2>Enter GitHub URL</h2>
+						<input type="url" ng-model="model.githubURL"
+							placeholder="GitHub URL" class="form-control choose-file">
+					</div>
+
+					<div class="row" ng-show="model.submitButton">
+						<button class="btn" ng-click="model.doUploadFile()">Upload
+							File</button>
+						<button class="btn" ng-show="model.assgnSubmitButton"
+							ng-click="model.compare()">Submit</button>
+						<p ng-bind="uploadResult"></p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

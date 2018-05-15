@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CodeSniffer">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>CodeSniffer</title>
+
+<link rel="stylesheet"
+	href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/form-elements.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/creative.min.css">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+
+<script src="app.js"></script>
+<script src="config.js"></script>
+
+<script src="views/admin/controllers/admin.controller.client.js"></script>
+<script src="views/user/controllers/user.controller.client.js"></script>
+<script src="views/dashboard/controllers/dashboard.controller.client.js"></script>
+<script src="views/faculty/controllers/courses.controller.client.js"></script>
+<script src="views/faculty/controllers/detailedreport.controller.client.js"></script>
+<script src="views/studentdashboard/controllers/student.courses.controller.client.js"></script>
+
+<script src="services/user.service.client.js"></script>
+<script src="services/courses.service.client.js"></script>
+<script src="services/faculty.service.client.js"></script>
+<script src="services/student.service.client.js"></script>
+<script src="services/semester.service.client.js"></script>
+
+<script src="directives/uploadfile.directive.js"></script>
+
+</head>
+
+<body>
+
+
+	<div ng-view></div>
+
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.backstretch.min.js"></script>
+	<script src="assets/js/retina-1.1.0.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	<!--  <script src="assets/js/Login.js"></script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+
+
+<div class="top-content">
+
+	<div class="inner-bg">
+		<div class="navigation">
+			<div class="row">
+				<div class="col-sm-10 text">
+					<h1 class="nav-title">
+						<strong>Code Sniffer</strong>
+					</h1>
+				</div>
+				<div class="col-sm-2 text nav-div">
+					<a class="btn btn-block" ng-click="model.logout()">Logout</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text">
+					<h1>
+						<strong>Hi {{username}}! How are you doing today?</strong>
+					</h1>
+					<h4>Just select the semester, and there you go!</h4>
+					<p>
+						<strong ng-bind="model.courseerror" style="color: red;"></strong>
+					</p>
+				</div>
+			</div>
+
+
+			<section class="p-0" id="portfolio">
+				<div class="container-fluid p-0">
+					<div class="row no-gutters popup-gallery">
+						<div class="col-lg-4 col-sm-6" ng-repeat="s in semesters">
+							<div class="portfolio-box">
+								<!-- <img class="img-fluid img-dashboard" src="assets/img/courses.png"> -->
+								<div id="{{s.id}}" ng-click="model.showCourse($event)"
+								class = "semester-button"><span>Select course:<br><strong>{{s.name}}</strong><br>semester</span></div>
+								<!-- <div class="portfolio-box-caption">
+									<div class="portfolio-box-caption-content">
+									</div>
+								</div> -->
+								<!-- <div class="portfolio-box-caption">
+									<div class="portfolio-box-caption-content">
+										<div id="{{s.id}}" ng-click="model.showCourse($event)">{{s.name}}</div>
+									</div>
+								</div> -->
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+
+
+		</div>
+	</div>
+
+</div>
+

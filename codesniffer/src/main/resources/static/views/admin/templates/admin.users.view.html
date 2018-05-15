@@ -1,0 +1,63 @@
+<div class="top-content">
+
+	<div class="inner-bg">
+		<div class="navigation">
+			<div class="row">
+				<div class="col-sm-10 text">
+					<h1 class="nav-title">
+						<strong>Code Sniffer</strong>
+					</h1>
+				</div>
+				<div class="col-sm-2  text nav-div">
+					<a class="btn btn-block" ng-click="model.logout()">Logout</a>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h1 style="color: darkslateblue;">
+				<strong>Admin</strong>
+			</h1>
+			<table class="table" style="margin-left:-160px;">
+				<thead>
+					<tr>
+						<th>Username</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>email</th>
+						<th>Role</th>
+						<th>Password</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in model.users">
+						<td><input class="admin-tbody" ng-model="user.username" /></td>
+						<td><input class="admin-tbody" ng-model="user.fName"/></td>
+						<td><input class="admin-tbody"  ng-model="user.lName"/></td>
+						<td><input class="admin-tbody"  ng-model="user.email"/></td>
+						<td><input class="admin-tbody"  ng-model="user.userType"/></td>
+						<td><input class="admin-tbody"  ng-model="user.password"/></td>
+						<td><a ng-click="model.deleteUser(user.id)"
+							class="glyphicon glyphicon-remove pull-right"> </a> <a
+							ng-click="model.updateUser(user)"
+							class="glyphicon glyphicon-ok pull-right"> </a></td>
+					</tr>
+
+					<tr>
+						<td><input class="admin-tbody" ng-model="model.newUser.username" /></td>
+						<td><input class="admin-tbody" ng-model="model.newUser.fName"/></td>
+						<td><input class="admin-tbody"  ng-model="model.newUser.lName"/></td>
+						<td><input class="admin-tbody"  ng-model="model.newUser.email"/></td>
+						<td><input class="admin-tbody"  ng-model="model.newUser.userType"/></td>
+						<td><input class="admin-tbody"  ng-model="model.newUser.password"/></td>
+
+						<td>
+							<a ng-click="model.createUser(model.newUser)"
+							   class="glyphicon glyphicon-plus pull-right"> </a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

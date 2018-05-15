@@ -1,0 +1,71 @@
+<div class="top-content">
+
+	<div class="inner-bg">
+
+		<div class="navigation">
+			<div class="row">
+				<div class="col-sm-10 text">
+					<h1 class="nav-title">
+						<strong>Code Sniffer</strong>
+					</h1>
+				</div>
+				<div class="col-sm-2  text nav-div">
+					<a class="btn btn-block" ng-click="model.logout()">Logout</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<!-- <table class="table">
+				<thead>
+					<tr>
+						<th>Submission ID</th>
+						<th>Student</th>
+						<th>Upload Date</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="sub in submissionList">
+						<td class="report-tbody">{{sub.id}}</td>
+						<td class="report-tbody">{{sub.user.fName}}</td>
+						<td class="report-tbody">{{sub.uploadDate}}</td>
+						<td class="report-tbody"><a
+							ng-click="model.shareReport(report)">Share</a></td>
+					</tr>
+				</tbody>
+			</table> -->
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>First Student</th>
+						<th>Submission ID</th>
+						<th>Second Student</th>
+						<th>Submission ID</th>
+						<th>Similarity Score</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="report in reportsList">
+						<td class="report-tbody">{{report.submissions[0].user.fName}}</td>
+						<td class="report-tbody">{{report.submissions[0].id}}</td>
+						<td class="report-tbody">{{report.submissions[1].user.fName}}</td>
+						<td class="report-tbody">{{report.submissions[1].id}}</td>
+						<td class="report-tbody">{{report.similarityScore}}</td>
+						<td class="report-tbody"><a
+							ng-click="model.shareReport(report)">Share</a></td>
+						<td class="report-tbody"><a
+							ng-click="model.viewDetailedReport(report)">View</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<p ng-bind="model.error"></p>
+			<p ng-bind="model.share_response"></p>
+		</div>
+	</div>
+</div>
+
+
